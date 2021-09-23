@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { HomeView } from "../views/homeview/HomeView";
 import { SignInView } from "../views/signinview/SignInView";
-import { StoreView } from "../views/storeview/StoreView";
+import { PokemonView } from "../views/pokemonview/PokemonView";
 import RoutingPath from "./RoutingPath";
 
 export const Routes = ({ children }) => {
@@ -10,7 +10,7 @@ export const Routes = ({ children }) => {
     <BrowserRouter>
       {children}
       <Switch>
-        <Route exact path={RoutingPath.storeView} component={StoreView} />
+        <Route exact path={RoutingPath.pokemonView} component={PokemonView} />
         <Route exact path={RoutingPath.signInView} component={SignInView} />
         <Route path={RoutingPath.homeView} component={HomeView} />
       </Switch>

@@ -6,7 +6,7 @@ export const NavigationDesktop = () => {
   return (
     <nav>
       <Link to={RoutingPath.homeView}>Home</Link>
-      <Link to={RoutingPath.storeView}>Store</Link>
+      <Link to={RoutingPath.pokemonView}>Pokemon</Link>
       <Link to={RoutingPath.signInView}>Sign In</Link>
     </nav>
   );

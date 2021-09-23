@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export const StoreView = () => {
+export const PokemonView = () => {
   const [count, setCount] = useState(0);
   useEffect(() => {
     console.log("Count är " + count);
@@ -10,7 +10,7 @@ export const StoreView = () => {
   }, [count]);
   return (
     <div>
-      <h1>Product</h1>
+      <h1>Pokemon</h1>
       <button onClick={() => setCount(count + 1)}>+</button>
       <span>{count}</span>
       <button
