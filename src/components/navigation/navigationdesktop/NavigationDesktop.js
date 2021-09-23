@@ -1,13 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import RoutingPath from "../../../routes/RoutingPath";
+import { useHistory } from "react-router";
+import { useContext } from "react";
+import { UserContext } from "../../../shared/provider/UserProvider";
 
 export const NavigationDesktop = () => {
+  const history = useHistory();
+  const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext);
+  const renderLogin = () => {
+    if (authenticatedUser) return <span>{authenticatedUser}</span>;
+  };
   return (
     <nav>
-      <Link to={RoutingPath.homeView}>Home</Link>
-      <Link to={RoutingPath.pokemonView}>Pokemon</Link>
-      <Link to={RoutingPath.signInView}>Sign In</Link>
+      <button onClick={() => history.push(RoutingPath.homeView)}>Home</button>
+      <button onClick={() => history.push(RoutingPath.pokemonView)}>
+        Pokemon
+      </button>
+      <button onClick={() => history.push(RoutingPath.signInView)}>
+        Sign In
+      </button>
+      {renderLogin()}
     </nav>
   );
 };
