@@ -7,6 +7,7 @@ export const SignInView = () => {
   const [password, setPassword] = useState();
   const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext);
   const history = useHistory();
+
   const login = () => {
     setAuthenticatedUser(username);
     history.goBack();
