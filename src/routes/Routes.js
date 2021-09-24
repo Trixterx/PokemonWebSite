@@ -23,15 +23,36 @@ export const Routes = ({ children }) => {
     isUserAuthenticated();
   }, []);
 
+  const blockIfAuthenticated = (view) => {
+    if (authenticatedUser) return HomeView;
+    else return view;
+  };
+
+  const AuthenticationRequired = (view) => {
+    if (!authenticatedUser) return HomeView;
+    else return view;
+  };
+
   return (
     <BrowserRouter>
       {children}
       <Switch>
         <Route exact path={RoutingPath.homeView} component={HomeView} />
         <Route exact path={RoutingPath.pokemonView} component={PokemonView} />
-        <Route path={RoutingPath.signInView} component={SignInView} />
-        <Route exact path={RoutingPath.profileView} component={ProfileView} />
-        <Route exact path={RoutingPath.settingsView} component={SettingsView} />
+        <Route
+          path={RoutingPath.signInView}
+          component={blockIfAuthenticated(SignInView)}
+        />
+        <Route
+          exact
+          path={RoutingPath.profileView}
+          component={AuthenticationRequired(ProfileView)}
+        />
+        <Route
+          exact
+          path={RoutingPath.settingsView}
+          component={AuthenticationRequired(SettingsView)}
+        />
       </Switch>
     </BrowserRouter>
   );
