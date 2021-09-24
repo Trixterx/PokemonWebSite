@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../shared/provider/UserProvider";
+import { ProfileDropDown } from "./profiledropdown/ProfileDropDown";
 import "./Profile.css";
 
 export const Profile = () => {
@@ -13,6 +14,7 @@ export const Profile = () => {
         alt="Random person"
       />
       <span>{authenticatedUser}</span>
+      <ProfileDropDown />
     </div>
   );
 };

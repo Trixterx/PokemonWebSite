@@ -1,0 +1,13 @@
+.profiledropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: lightblue;
+  padding: 0.125em 0.25em;
+}
+
+.profile:focus-within .profiledropdown,
+.profile:hover .profiledropdown {
+  display: block;
+}

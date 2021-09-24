@@ -6,6 +6,8 @@ import { PokemonView } from "../views/pokemonview/PokemonView";
 import RoutingPath from "./RoutingPath";
 import { UserContext } from "../shared/provider/UserProvider";
 import UseLocalStorage from "../shared/storage/UseLocalStorage";
+import { ProfileView } from "../views/authenticatedviews/profileview/ProfileView";
+import { SettingsView } from "../views/authenticatedviews/settingsview/SettingsView";
 
 export const Routes = ({ children }) => {
   const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext);
@@ -28,6 +30,8 @@ export const Routes = ({ children }) => {
         <Route exact path={RoutingPath.homeView} component={HomeView} />
         <Route exact path={RoutingPath.pokemonView} component={PokemonView} />
         <Route path={RoutingPath.signInView} component={SignInView} />
+        <Route exact path={RoutingPath.profileView} component={ProfileView} />
+        <Route exact path={RoutingPath.settingsView} component={SettingsView} />
       </Switch>
     </BrowserRouter>
   );
