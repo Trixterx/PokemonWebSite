@@ -3,6 +3,7 @@ import RoutingPath from "../../../routes/RoutingPath";
 import { useHistory } from "react-router";
 import { useContext } from "react";
 import { UserContext } from "../../../shared/provider/UserProvider";
+import { Profile } from "../../profile/Profile";
 import "./NavigationDesktop.css";
 
 export const NavigationDesktop = () => {
@@ -12,7 +13,9 @@ export const NavigationDesktop = () => {
   const renderLogin = () => {
     if (authenticatedUser)
       return (
-        <span className="navbar__login--desktop">{authenticatedUser}</span>
+        <span className="navbar__login--desktop">
+          <Profile />
+        </span>
       );
     return (
       <button
