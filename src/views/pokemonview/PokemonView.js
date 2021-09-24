@@ -10,7 +10,7 @@ export const PokemonView = () => {
   }, [count]);
   return (
     <div>
-      <h1>Pokemon</h1>
+      <h1>Pokémon</h1>
       <button onClick={() => setCount(count + 1)}>+</button>
       <span>{count}</span>
       <button

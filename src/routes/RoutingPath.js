@@ -1,9 +1,9 @@
 const homeView = "/";
-const signInView = "/signin";
 const pokemonView = "/pokemon";
+const signInView = "/signin";
 
 export default {
   homeView,
-  signInView,
   pokemonView,
+  signInView,
 };

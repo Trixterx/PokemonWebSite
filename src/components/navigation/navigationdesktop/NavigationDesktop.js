@@ -3,25 +3,41 @@ import RoutingPath from "../../../routes/RoutingPath";
 import { useHistory } from "react-router";
 import { useContext } from "react";
 import { UserContext } from "../../../shared/provider/UserProvider";
+import "./NavigationDesktop.css";
 
 export const NavigationDesktop = () => {
   const history = useHistory();
   const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext);
 
   const renderLogin = () => {
-    if (authenticatedUser) return <span>{authenticatedUser}</span>;
+    if (authenticatedUser)
+      return (
+        <span className="navbar__login--desktop">{authenticatedUser}</span>
+      );
     return (
-      <button onClick={() => history.push(RoutingPath.signInView)}>
+      <button
+        className="navbar__login--desktop"
+        onClick={() => history.push(RoutingPath.signInView)}
+      >
         Sign In
       </button>
     );
   };
   return (
-    <nav>
-      <button onClick={() => history.push(RoutingPath.homeView)}>Home</button>
-      <button onClick={() => history.push(RoutingPath.pokemonView)}>
-        Pokemon
-      </button>
+    <nav className="navbar--desktop">
+      <span className="navbar__logo--desktop">Logo</span>
+      <ul className="navbar__list--deskop">
+        <li>
+          <button onClick={() => history.push(RoutingPath.homeView)}>
+            Home
+          </button>
+        </li>
+        <li>
+          <button onClick={() => history.push(RoutingPath.pokemonView)}>
+            Pokémon
+          </button>
+        </li>
+      </ul>
       {renderLogin()}
     </nav>
   );

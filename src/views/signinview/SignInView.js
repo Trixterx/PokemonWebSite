@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../../shared/provider/UserProvider";
 import { useHistory } from "react-router";
+import UseLocalStorage from "../../shared/storage/UseLocalStorage";
 
 export const SignInView = () => {
   const [username, setUsername] = useState("Dennis");
@@ -10,6 +11,7 @@ export const SignInView = () => {
 
   const login = () => {
     setAuthenticatedUser(username);
+    localStorage.setItem(UseLocalStorage.username, username);
     history.goBack();
   };
   return (
