@@ -8,6 +8,7 @@ import { UserContext } from "../shared/provider/UserProvider";
 import UseLocalStorage from "../shared/storage/UseLocalStorage";
 import { ProfileView } from "../views/authenticatedviews/profileview/ProfileView";
 import { SettingsView } from "../views/authenticatedviews/settingsview/SettingsView";
+import { PokemonSearchView } from "../views/pokemonsearchview/PokemonSearchView";
 
 export const Routes = ({ children }) => {
   const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext);
@@ -40,6 +41,12 @@ export const Routes = ({ children }) => {
         <Route exact path={RoutingPath.homeView} component={HomeView} />
         <Route exact path={RoutingPath.pokemonView} component={PokemonView} />
         <Route
+          exact
+          path={RoutingPath.pokemonSearchView}
+          component={PokemonSearchView}
+        />
+        <Route
+          exact
           path={RoutingPath.signInView}
           component={blockIfAuthenticated(SignInView)}
         />

@@ -3,6 +3,7 @@ const pokemonView = "/pokemon";
 const signInView = "/signin";
 const profileView = "/profile";
 const settingsView = "/settings";
+const pokemonSearchView = "/pokemonsearch";
 
 export default {
   homeView,
@@ -10,4 +11,5 @@ export default {
   signInView,
   profileView,
   settingsView,
+  pokemonSearchView,
 };

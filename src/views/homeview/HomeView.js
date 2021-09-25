@@ -2,8 +2,10 @@ import React from "react";
 
 export const HomeView = () => {
   return (
-    <div>
-      <h1>Homeview</h1>
-    </div>
+    <main>
+      <section>
+        <h1>Homeview</h1>
+      </section>
+    </main>
   );
 };

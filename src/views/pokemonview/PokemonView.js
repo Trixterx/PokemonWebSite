@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import loading_spinner from "../../shared/img/loading_spinner.gif";
+import "./PokemonView.css";
 
 export const PokemonView = () => {
   const [serverResponse, setServerResponse] = useState();
@@ -10,29 +12,42 @@ export const PokemonView = () => {
     try {
       const response = await axios.get(API_URL);
       setServerResponse(response);
-      if (count > 0) setCount(count + 1);
+      if (count >= 1) setCount(count + 1);
     } catch (error) {
-      alert("Error retrieving data from server: " + error);
+      alert(`Error retrieving data from server: ${error}`);
     }
   };
 
-  const counter = () => {};
-
   const showLoadingIfNoAPI = () => {
-    if (serverResponse) return serverResponse.data?.name;
-    else return "Loading..";
+    if (serverResponse)
+      return (
+        <div className="pokemon__container">
+          <h2>{serverResponse.data?.name}</h2>
+          <img
+            src={serverResponse?.data?.sprites?.front_default}
+            alt="Picture of Pokémon"
+          />
+        </div>
+      );
+    else
+      return (
+        <div className="pokemon__container">
+          <h2>Loading..</h2>
+          <img
+            className="loading__spinner"
+            src={loading_spinner}
+            alt="Loading spinner.."
+          />
+        </div>
+      );
   };
   return (
     <main>
       <section>
         <h1>Pokémon view</h1>
-        <h2>{showLoadingIfNoAPI()}</h2>
-        <img
-          src={serverResponse?.data?.sprites?.front_default}
-          alt="Picture of selected Pokémon"
-        />
+        {showLoadingIfNoAPI()}
         <br />
-        <button onClick={() => fetchData()}>API call +</button>
+        <button onClick={() => fetchData()}>API call</button>
       </section>
     </main>
   );

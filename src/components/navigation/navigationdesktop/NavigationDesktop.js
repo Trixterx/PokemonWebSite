@@ -28,7 +28,7 @@ export const NavigationDesktop = () => {
   };
   return (
     <nav className="navbar--desktop">
-      <span className="navbar__logo--desktop">Logo</span>
+      <span className="navbar__logo--desktop">Pokémon</span>
       <ul className="navbar__list--deskop">
         <li>
           <button onClick={() => history.push(RoutingPath.homeView)}>
@@ -38,6 +38,11 @@ export const NavigationDesktop = () => {
         <li>
           <button onClick={() => history.push(RoutingPath.pokemonView)}>
             Pokémon
+          </button>
+        </li>
+        <li>
+          <button onClick={() => history.push(RoutingPath.pokemonSearchView)}>
+            Search Pokémon
           </button>
         </li>
       </ul>
