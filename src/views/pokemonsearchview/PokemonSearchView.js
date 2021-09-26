@@ -13,8 +13,8 @@ export const PokemonSearchView = () => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const response = await PokemonAPIService.searchPokemon(search);
-      setServerData(response.data);
+      const { data } = await PokemonAPIService.searchPokemon(search);
+      setServerData(data);
       setLoading(false);
     } catch (error) {
       console.log(`Something went wrong with the API call: ${error}`);

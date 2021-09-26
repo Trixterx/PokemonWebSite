@@ -7,7 +7,7 @@ const searchPokemon = (pokemonName) => {
 };
 
 const getAllPokemons = () => {
-  return http.get(`/pokemon?limit=100`);
+  return http.get(`/pokemon?limit=50`);
 };
 
 export default { searchPokemon, getAllPokemons };
