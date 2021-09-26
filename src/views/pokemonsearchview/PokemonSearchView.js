@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import PokemonAPIService from "../../shared/api/service/PokemonAPIService";
 import loading_spinner from "../../shared/img/loading_spinner.gif";
+import { useDebounce } from "../../shared/hooks/useDebounce";
 import "./PokemonSearchView.css";
 
 export const PokemonSearchView = () => {
   const [serverData, setServerData] = useState();
   const [search, setSearch] = useState();
   const [loading, setLoading] = useState(true);
+  const debounceValue = useDebounce(search, 2000);
 
   const fetchData = async () => {
     setLoading(true);
@@ -44,7 +46,7 @@ export const PokemonSearchView = () => {
 
   useEffect(() => {
     fetchData();
-  }, [search]);
+  }, [debounceValue]);
 
   return (
     <main>
