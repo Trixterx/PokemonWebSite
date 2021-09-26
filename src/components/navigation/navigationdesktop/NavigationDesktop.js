@@ -10,7 +10,7 @@ import { Cart } from "../../cart/Cart";
 export const NavigationDesktop = () => {
   const history = useHistory();
   const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext);
-  const [isCartOpen, setIsCartOpen] = useState(true);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const renderLogin = () => {
     if (authenticatedUser)

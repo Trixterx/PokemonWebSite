@@ -11,16 +11,21 @@ export const StoreView = () => {
   const displayData = () => {
     return serverData?.results?.map((pokemon, i) => (
       <div className="pokemon__container--view" key={pokemon.name}>
-        <h3>
-          {i + 1}. {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}
-        </h3>
-        <button
-          onClick={() =>
-            history.push({ pathname: RoutingPath.pokemonView, state: pokemon })
-          }
-        >
-          More Info
-        </button>
+        <div className="eachitem">
+          <h3>
+            {i + 1}. {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}
+          </h3>
+          <button
+            onClick={() =>
+              history.push({
+                pathname: RoutingPath.pokemonView,
+                state: pokemon,
+              })
+            }
+          >
+            More Info
+          </button>
+        </div>
       </div>
     ));
   };

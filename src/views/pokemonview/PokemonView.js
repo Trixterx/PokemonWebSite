@@ -40,8 +40,16 @@ export const PokemonView = () => {
         <h3>Weight: {serverData?.weight}</h3>
         <h3>Height: {serverData?.height}</h3>
         <button
-          onClick={() => setItemsInCart(...itemsInCart, location?.state?.name)}
-        ></button>
+          onClick={() =>
+            setItemsInCart([
+              ...itemsInCart,
+              location?.state?.name[0].toUpperCase() +
+                location?.state?.name.slice(1),
+            ])
+          }
+        >
+          Add to Cart
+        </button>
       </section>
     </main>
   );
