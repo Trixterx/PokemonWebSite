@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./StoreView.css";
 import PokemonAPIService from "../../shared/api/service/PokemonAPIService";
+import RoutingPath from "../../routes/RoutingPath";
+import { useHistory } from "react-router";
 
 export const StoreView = () => {
   const [serverData, setServerData] = useState();
+  const history = useHistory();
 
   const displayData = () => {
     return serverData?.results?.map((pokemon, i) => (
@@ -11,6 +14,13 @@ export const StoreView = () => {
         <h3>
           {i + 1}. {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}
         </h3>
+        <button
+          onClick={() =>
+            history.push({ pathname: RoutingPath.pokemonView, state: pokemon })
+          }
+        >
+          More Info
+        </button>
         <br />
       </div>
     ));
