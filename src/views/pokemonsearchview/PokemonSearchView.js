@@ -33,7 +33,9 @@ export const PokemonSearchView = () => {
       </div>
     ) : (
       <div className="pokemon__container">
-        <h2>Name: {serverData?.name}</h2>
+        <h2>
+          Name: {serverData?.name[0].toUpperCase() + serverData?.name.slice(1)}
+        </h2>
         <img
           src={serverData?.sprites?.front_default}
           alt="Picture of Pokémon"

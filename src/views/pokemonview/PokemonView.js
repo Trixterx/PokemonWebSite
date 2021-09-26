@@ -7,9 +7,9 @@ export const PokemonView = () => {
 
   const displayData = () => {
     return serverData?.results?.map((pokemon, i) => (
-      <div key={pokemon.name}>
+      <div className="pokemon__container" key={pokemon.name}>
         <h3>
-          {i + 1}. Name: {pokemon.name}
+          {i + 1}. {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}
         </h3>
       </div>
     ));
@@ -31,8 +31,8 @@ export const PokemonView = () => {
   return (
     <main>
       <section>
-        <h1>List of Pokémons</h1>
-        <button onClick={() => console.log(serverData)}>API</button>
+        <h1>List of Pokémon</h1>
+        <button onClick={() => console.log(serverData)}>Log API Call</button>
         {displayData()}
       </section>
     </main>
