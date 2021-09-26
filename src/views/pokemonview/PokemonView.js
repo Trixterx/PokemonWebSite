@@ -47,7 +47,7 @@ export const PokemonView = () => {
         <h1>Pokémon view</h1>
         {showLoadingIfNoAPI()}
         <br />
-        <button onClick={() => fetchData()}>API call</button>
+        <button onClick={() => fetchData()}>API Call</button>
       </section>
     </main>
   );

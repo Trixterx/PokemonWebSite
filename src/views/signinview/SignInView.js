@@ -21,13 +21,13 @@ export const SignInView = () => {
       <input
         placeholder="Enter username"
         onChange={(event) => setUsername(event.target.value)}
-      ></input>
+      />
       <br />
       <input
         placeholder="Enter password"
         type="password"
         onChange={(event) => setPassword(event.target.value)}
-      ></input>
+      />
       <br />
       <button onClick={() => login()}>Sign in</button>
     </div>

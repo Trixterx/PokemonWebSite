@@ -2,8 +2,8 @@ import http from "../PokemonAPI";
 
 http.get("/pokemon/");
 
-const searchPokemon = () => {
-  return http.get("/pokemon/onix");
+const searchPokemon = (pokemonName) => {
+  return http.get(`/pokemon/${pokemonName}`);
 };
 
 export default { searchPokemon };
