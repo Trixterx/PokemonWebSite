@@ -28,4 +28,6 @@
 .navbar__login--desktop {
   justify-self: end;
   grid-column: -3;
+  display: flex;
+  gap: 1em;
 }

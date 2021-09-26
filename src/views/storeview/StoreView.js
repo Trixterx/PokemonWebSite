@@ -21,7 +21,6 @@ export const StoreView = () => {
         >
           More Info
         </button>
-        <br />
       </div>
     ));
   };

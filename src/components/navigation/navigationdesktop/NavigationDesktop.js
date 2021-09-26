@@ -1,29 +1,32 @@
 import React from "react";
 import RoutingPath from "../../../routes/RoutingPath";
 import { useHistory } from "react-router";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../../../shared/provider/UserProvider";
 import { Profile } from "../../profile/Profile";
 import "./NavigationDesktop.css";
+import { Cart } from "../../cart/Cart";
 
 export const NavigationDesktop = () => {
   const history = useHistory();
   const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext);
+  const [isCartOpen, setIsCartOpen] = useState(true);
 
   const renderLogin = () => {
     if (authenticatedUser)
       return (
         <span className="navbar__login--desktop">
+          <button onClick={() => setIsCartOpen(true)}>Cart</button>
           <Profile />
         </span>
       );
     return (
-      <button
-        className="navbar__login--desktop"
-        onClick={() => history.push(RoutingPath.signInView)}
-      >
-        Sign In
-      </button>
+      <span className="navbar__login--desktop">
+        <button onClick={() => setIsCartOpen(true)}>Cart</button>
+        <button onClick={() => history.push(RoutingPath.signInView)}>
+          Sign In
+        </button>
+      </span>
     );
   };
   return (
@@ -47,6 +50,7 @@ export const NavigationDesktop = () => {
         </li>
       </ul>
       {renderLogin()}
+      <Cart isCartOpen={isCartOpen} cartHandler={setIsCartOpen} />
     </nav>
   );
 };
