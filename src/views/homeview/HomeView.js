@@ -4,7 +4,8 @@ export const HomeView = () => {
   return (
     <main>
       <section>
-        <h1>Homeview</h1>
+        <h1>Home</h1>
+        <h3>This is a Pokémon website!</h3>
       </section>
     </main>
   );

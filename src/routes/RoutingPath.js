@@ -1,15 +1,17 @@
 const homeView = "/";
-const pokemonView = "/pokemon";
+const storeView = "/store";
 const signInView = "/signin";
 const profileView = "/profile";
 const settingsView = "/settings";
 const pokemonSearchView = "/pokemonsearch";
+const pokemonView = "/pokemon";
 
 export default {
   homeView,
-  pokemonView,
+  storeView,
   signInView,
   profileView,
   settingsView,
   pokemonSearchView,
+  pokemonView,
 };

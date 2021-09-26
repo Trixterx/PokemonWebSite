@@ -36,6 +36,11 @@ export const NavigationDesktop = () => {
           </button>
         </li>
         <li>
+          <button onClick={() => history.push(RoutingPath.storeView)}>
+            Store
+          </button>
+        </li>
+        <li>
           <button onClick={() => history.push(RoutingPath.pokemonView)}>
             Pokémon
           </button>

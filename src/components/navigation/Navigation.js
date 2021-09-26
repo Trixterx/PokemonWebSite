@@ -7,7 +7,8 @@ export const Navigation = () => {
   const { width } = useWindowDimensions();
 
   const displayNavigation = () => {
-    return width <= 1100 ? <NavigationMobile /> : <NavigationDesktop />;
+    return width <= 1 ? <NavigationMobile /> : <NavigationDesktop />;
+    // Set value to 1 since I have not implemented mobile navigation yet.
   };
   return <>{displayNavigation()}</>;
 };

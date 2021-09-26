@@ -1,14 +1,15 @@
 import React, { useContext, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { HomeView } from "../views/homeview/HomeView";
+import { StoreView } from "../views/storeview/StoreView";
 import { SignInView } from "../views/signinview/SignInView";
-import { PokemonView } from "../views/pokemonview/PokemonView";
 import RoutingPath from "./RoutingPath";
 import { UserContext } from "../shared/provider/UserProvider";
 import UseLocalStorage from "../shared/storage/UseLocalStorage";
 import { ProfileView } from "../views/authenticatedviews/profileview/ProfileView";
 import { SettingsView } from "../views/authenticatedviews/settingsview/SettingsView";
 import { PokemonSearchView } from "../views/pokemonsearchview/PokemonSearchView";
+import { PokemonView } from "../views/pokemonview/PokemonView";
 
 export const Routes = ({ children }) => {
   const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext);
@@ -39,6 +40,7 @@ export const Routes = ({ children }) => {
       {children}
       <Switch>
         <Route exact path={RoutingPath.homeView} component={HomeView} />
+        <Route exact path={RoutingPath.storeView} component={StoreView} />
         <Route exact path={RoutingPath.pokemonView} component={PokemonView} />
         <Route
           exact
