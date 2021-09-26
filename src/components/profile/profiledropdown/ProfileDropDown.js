@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useHistory } from "react-router";
 import RoutingPath from "../../../routes/RoutingPath";
 import { UserContext } from "../../../shared/provider/UserProvider";
-import UseLocalStorage from "../../../shared/storage/useLocalStorage";
+import UseLocalStorage from "../../../shared/storage/UseLocalStorage";
 import "./ProfileDropDown.css";
 
 export const ProfileDropDown = () => {
