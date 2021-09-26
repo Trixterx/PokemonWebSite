@@ -11,6 +11,7 @@ export const PokemonView = () => {
         <h3>
           {i + 1}. {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}
         </h3>
+        <br />
       </div>
     ));
   };
@@ -33,6 +34,7 @@ export const PokemonView = () => {
       <section>
         <h1>List of Pokémon</h1>
         <button onClick={() => console.log(serverData)}>Log API Call</button>
+        <br />
         {displayData()}
       </section>
     </main>
