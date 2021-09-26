@@ -14,7 +14,7 @@ export const PokemonView = () => {
       setServerResponse(response);
       if (count >= 1) setCount(count + 1);
     } catch (error) {
-      alert(`Error retrieving data from server: ${error}`);
+      console.log(`Error retrieving data from server: ${error}`);
     }
   };
 
