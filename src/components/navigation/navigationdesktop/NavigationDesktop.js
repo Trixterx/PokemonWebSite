@@ -4,8 +4,8 @@ import { useHistory } from "react-router";
 import { useContext, useState } from "react";
 import { UserContext } from "../../../shared/provider/UserProvider";
 import { Profile } from "../../profile/Profile";
-import "./NavigationDesktop.css";
 import { Cart } from "../../cart/Cart";
+import "./NavigationDesktop.css";
 
 export const NavigationDesktop = () => {
   const history = useHistory();
@@ -31,7 +31,7 @@ export const NavigationDesktop = () => {
   };
   return (
     <nav className="navbar--desktop">
-      <span className="navbar__logo--desktop">Pokémon</span>
+      <span className="navbar__logo--desktop">Pokémon Shop</span>
       <ul className="navbar__list--deskop">
         <li>
           <button onClick={() => history.push(RoutingPath.homeView)}>

@@ -15,21 +15,23 @@ export const SignInView = () => {
     history.goBack();
   };
   return (
-    <div>
-      <h1>Sign in view</h1>
-      <h2>{username}</h2>
-      <input
-        placeholder="Enter username"
-        onChange={(event) => setUsername(event.target.value)}
-      />
-      <br />
-      <input
-        placeholder="Enter password"
-        type="password"
-        onChange={(event) => setPassword(event.target.value)}
-      />
-      <br />
-      <button onClick={() => login()}>Sign in</button>
-    </div>
+    <main>
+      <section>
+        <h1>Sign in view</h1>
+        <h2>{username}</h2>
+        <input
+          placeholder="Enter username"
+          onChange={(event) => setUsername(event.target.value)}
+        />
+        <br />
+        <input
+          placeholder="Enter password"
+          type="password"
+          onChange={(event) => setPassword(event.target.value)}
+        />
+        <br />
+        <button onClick={() => login()}>Sign in</button>
+      </section>
+    </main>
   );
 };

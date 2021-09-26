@@ -1,0 +1,10 @@
+.pokemon__card--view {
+  display: block;
+  background-color: lightblue;
+  margin: 1em 1em 1em 0;
+  padding: 0.5em;
+  width: 15em;
+  height: 19em;
+  text-align: center;
+  border-radius: 0.5em;
+}

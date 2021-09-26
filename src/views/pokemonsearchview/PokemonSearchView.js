@@ -23,23 +23,23 @@ export const PokemonSearchView = () => {
 
   const displayData = () => {
     return loading ? (
-      <div className="pokemon__container--search">
+      <div className="pokemon__spinnercontainer--search">
         <h2>Loading..</h2>
         <img
-          className="loading__spinner"
+          className="loading__spinner--search"
           src={loading_spinner}
           alt="Loading spinner.."
         />
       </div>
     ) : (
-      <div className="pokemon__container--search">
-        <h2>Name: {serverData?.name}</h2>
+      <div className="pokemon__card--search">
+        <h2>{serverData?.name}</h2>
         <img
           src={serverData?.sprites?.front_default}
           alt="Picture of Pokémon"
         />
-        <h2>Weight: {serverData?.weight}</h2>
-        <h2>Height: {serverData?.height}</h2>
+        <h3>Weight: {serverData?.weight}kg</h3>
+        <h3>Height: {serverData?.height}m</h3>
       </div>
     );
   };
@@ -56,6 +56,7 @@ export const PokemonSearchView = () => {
           placeholder="Search for Pokémon"
           onChange={(event) => setSearch(event.target.value)}
         />
+        <br />
         {displayData()}
       </section>
     </main>

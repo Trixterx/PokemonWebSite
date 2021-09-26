@@ -10,8 +10,8 @@ export const StoreView = () => {
 
   const displayData = () => {
     return serverData?.results?.map((pokemon, i) => (
-      <div className="pokemon__container--view" key={pokemon.name}>
-        <div className="eachitem">
+      <div className="pokemon__cardcontainer" key={pokemon.name}>
+        <div className="pokemon__eachcard">
           <h3>
             {i + 1}. {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}
           </h3>

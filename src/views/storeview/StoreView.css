@@ -1,9 +1,21 @@
-.pokemon__container--view {
-  display: inline-grid;
-  grid-template-rows: repeat(3, 1fr);
-  grid-auto-rows: 200px;
-  padding: 1em;
+.pokemon__cardcontainer {
+  display: inline-flex;
+  background-color: lightblue;
+  margin: 1em 1em 1em 0;
+  border-radius: 0.5em;
 }
 
-.eachitem {
+.pokemon__eachcard {
+  display: flex;
+  flex-direction: column;
+  width: 10em;
+  height: 8em;
+}
+
+.pokemon__eachcard h3 {
+  text-align: center;
+}
+
+.pokemon__eachcard button {
+  margin: 1em;
 }

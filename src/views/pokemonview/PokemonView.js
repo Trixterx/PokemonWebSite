@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useLocation } from "react-router";
 import { ItemsInCartContext } from "../../shared/provider/ItemsInCartProvider";
 import PokemonAPIService from "../../shared/api/service/PokemonAPIService";
+import "./PokemonView.css";
 
 export const PokemonView = () => {
   const [serverData, setServerData] = useState();
@@ -19,26 +20,22 @@ export const PokemonView = () => {
     }
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  return (
-    <main>
-      <section>
-        <h1>Pokémon view</h1>
-        <h3>
-          Name:{" "}
-          {location?.state?.name[0].toUpperCase() +
-            location?.state?.name.slice(1)}
-        </h3>
-        <img
-          className="pokeinfo__img"
-          src={serverData?.sprites?.front_default}
-          alt="Picture of Pokémon"
-        />
-        <h3>Weight: {serverData?.weight}</h3>
-        <h3>Height: {serverData?.height}</h3>
+  const displayData = () => {
+    return serverData ? (
+      <div>
+        <div className="pokemon__card--view">
+          <h2>
+            {location?.state?.name[0].toUpperCase() +
+              location?.state?.name.slice(1)}
+          </h2>
+          <img
+            className="pokeinfo__img"
+            src={serverData?.sprites?.front_default}
+            alt="Picture of Pokémon"
+          />
+          <h3>Weight: {serverData?.weight}kg</h3>
+          <h3>Height: {serverData?.height}m</h3>
+        </div>
         <button
           onClick={() =>
             setItemsInCart([
@@ -50,6 +47,21 @@ export const PokemonView = () => {
         >
           Add to Cart
         </button>
+      </div>
+    ) : (
+      <div>Loading..</div>
+    );
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  return (
+    <main>
+      <section>
+        <h1>Pokémon view</h1>
+        {displayData()}
       </section>
     </main>
   );

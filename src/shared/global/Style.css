@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 :root {
 }
 
@@ -25,4 +27,7 @@ main {
 
 button {
   padding: 0.5em;
+  font-size: medium;
+  font-weight: 600;
+  border-radius: 1%;
 }
