@@ -1,0 +1,25 @@
+.pokemon__spinnercontainer--search {
+  display: block;
+  background-color: lightblue;
+  padding: 0.5em;
+  margin: 1em 1em 1em 0;
+  width: 15em;
+  height: 20em;
+  text-align: center;
+  border-radius: 0.5em;
+  border: 0.1rem solid black;
+  box-shadow: 0.4rem 0.3rem 0.3rem black;
+}
+
+.pokemon__card--search {
+  display: block;
+  background-color: lightblue;
+  padding: 0.5em;
+  margin: 1em 1em 1em 0;
+  width: 15em;
+  height: 20em;
+  text-align: center;
+  border-radius: 0.5em;
+  border: 0.1rem solid black;
+  box-shadow: 0.4rem 0.3rem 0.3rem black;
+}

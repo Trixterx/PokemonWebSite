@@ -20,6 +20,10 @@ export const PokemonView = () => {
     }
   };
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   const displayData = () => {
     return serverData ? (
       <div>
@@ -52,10 +56,6 @@ export const PokemonView = () => {
       <div>Loading..</div>
     );
   };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   return (
     <main>

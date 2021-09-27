@@ -6,16 +6,19 @@ import {
   ItemsInCartProvider,
 } from "./shared/provider/ItemsInCartProvider";
 import "./shared/global/Style.css";
+import { PokemonProvider } from "./shared/provider/PokemonProvider";
 
 function App() {
   return (
-    <ItemsInCartProvider>
-      <UserProvider>
-        <Routes>
-          <Navigation />
-        </Routes>
-      </UserProvider>
-    </ItemsInCartProvider>
+    <PokemonProvider>
+      <ItemsInCartProvider>
+        <UserProvider>
+          <Routes>
+            <Navigation />
+          </Routes>
+        </UserProvider>
+      </ItemsInCartProvider>
+    </PokemonProvider>
   );
 }
 
